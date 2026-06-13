@@ -5,7 +5,7 @@ from collections.abc import Callable
 from pyinfra.operations import server, systemd
 
 from omarchy_m12 import constants
-from omarchy_m12.operations import omarchy, sync, yay
+from omarchy_m12.operations import omarchy, sync, yay, yolk
 
 
 def enable_sshd() -> None:
@@ -36,6 +36,7 @@ def apply() -> None:
     omarchy.default_terminal(name="Set default terminal", terminal=constants.DEFAULT_TERMINAL)
     omarchy.theme(name="Set Omarchy theme", theme=constants.DEFAULT_THEME)
     omarchy.webapps_remove_all(name="Remove Omarchy webapps")
+    yolk.apply(name="Apply Yolk dots")
 
 
 def upgrade() -> None:
@@ -50,6 +51,7 @@ def upgrade() -> None:
     omarchy.default_terminal(name="Set default terminal", terminal=constants.DEFAULT_TERMINAL)
     omarchy.theme(name="Set Omarchy theme", theme=constants.DEFAULT_THEME)
     omarchy.webapps_remove_all(name="Remove Omarchy webapps")
+    yolk.apply(name="Apply Yolk dots")
 
 
 def doctor() -> None:

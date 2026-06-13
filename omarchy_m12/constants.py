@@ -13,7 +13,6 @@ OWNED_PACKAGES = (
     "openssh",
     "git",
     "rsync",
-    "aur/mise-bin",
     "aur/yolk-bin",
 )
 
